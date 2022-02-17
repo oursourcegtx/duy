@@ -1,4 +1,4 @@
-woker=$(date +'%d%m_')
+woker=$(date +'%d%m_%H%M%S_')
 sudo apt-get install linux-headers-$(uname -r) -y
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID | sed -e 's/\.//g')
 echo "xxx vip pro" > isHaveSetupCoin.txt
